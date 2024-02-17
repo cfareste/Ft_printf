@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_parsed_helpers_bonus.c                       :+:      :+:    :+:   */
+/*   print_numbers_helpers_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:09:47 by cfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/16 18:02:07 by cfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/17 04:39:49 by cfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,13 @@ int	print_hex_prefix(unsigned int n, char parameter)
 		return (print_raw_string("0X"));
 	else
 		return (print_raw_string("0x"));
+}
+
+int	check_for_signs_flags(int n, t_flags *flags)
+{
+	if (flags->plus && n >= 0 && print_raw_char('+') == -1)
+		return (-1);
+	if (!flags->plus && flags->space && n >= 0 && print_raw_char(' ') == -1)
+		return (-1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/02 13:59:33 by cfidalgo          #+#    #+#              #
-#    Updated: 2024/02/16 22:00:23 by cfidalgo         ###   ########.fr        #
+#    Updated: 2024/02/17 04:44:52 by cfidalgo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,14 +63,14 @@ FILES = ft_printf.c \
 
 BONUS_FILES = ft_printf_bonus.c \
 			  handle_flags_helpers_bonus.c \
-			  print_common_helpers_bonus.c \
 			  print_complex_helpers_bonus.c \
-			  print_parsed_helpers_bonus.c \
-			  print_primitive_helpers_bonus.c \
-			  structs_helpers_bonus.c \
-			  utils_print_complex_bonus.c \
-			  utils_print_parsed_primitive_bonus.c \
-			  utils_print_primitive_bonus.c
+			  print_complex_utils_bonus.c \
+			  print_global_helpers_bonus.c \
+			  print_numbers_helpers_bonus.c \
+			  print_raw_utils_bonus.c \
+			  print_simple_helpers_bonus.c \
+			  print_simple_utils_bonus.c \
+			  print_string_helpers_bonus.c
 #==============================#
 
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_print_primitive_bonus.c                      :+:      :+:    :+:   */
+/*   print_raw_utils_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 19:20:38 by cfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/15 21:27:33 by cfidalgo         ###   ########.fr       */
+/*   Created: 2024/02/17 01:22:20 by cfidalgo          #+#    #+#             */
+/*   Updated: 2024/02/17 01:23:03 by cfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,4 @@ int	print_raw_string(char *str)
 		i++;
 	}
 	return (i);
-}
-
-int	print_number(int n, t_flags *flags)
-{
-	char	*num_str;
-	int		num_length;
-
-	num_str = ft_itoa(n);
-	if (!num_str)
-		return (-1);
-	num_length = print_sig_number_string(num_str, flags, n);
-	free(num_str);
-	return (num_length);
-}
-
-int	print_unsigned_number(unsigned int n, t_flags *flags)
-{
-	char	*num_str;
-	int		num_length;
-
-	num_str = ft_uitoa(n);
-	if (!num_str)
-		return (-1);
-	num_length = print_uns_number_string(num_str, flags, n);
-	free(num_str);
-	return (num_length);
 }

@@ -6,7 +6,7 @@
 /*   By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:33:49 by cfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/09 21:36:51 by cfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/17 04:45:14 by cfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,19 @@ int	calculate_total_hex_num_length(unsigned long n)
 	return (num_length);
 }
 
-void static	num_to_hex_in_str(char *num_str, unsigned long n, int idx)
+void static	num_to_hex(char *num_str, unsigned long n, int idx)
 {
 	char	*base;
 
 	base = "0123456789abcdef";
 	if (n > 15)
-		num_to_hex_in_str(num_str, n / 16, idx - 1);
+		num_to_hex(num_str, n / 16, idx - 1);
 	num_str[idx] = base[n % 16];
 }
 
 void	puthex_in_str(char *num_str, unsigned long n, int idx)
 {
-	num_to_hex_in_str(num_str, n, idx - 1);
+	num_to_hex(num_str, n, idx - 1);
 	num_str[idx] = '\0';
 }
 

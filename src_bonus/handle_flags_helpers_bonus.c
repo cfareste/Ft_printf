@@ -6,7 +6,7 @@
 /*   By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:04:18 by cfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/16 18:10:26 by cfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/17 00:27:51 by cfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int static	get_number(char const *str, int *pos)
 
 	start_pos = *pos;
 	while (ft_isdigit(str[*pos]))
-		(*pos)++;
+		*pos = *pos + 1;
 	num_substr = ft_substr(str, start_pos, *pos - start_pos);
 	if (!num_substr)
 		return (-1);
@@ -52,16 +52,27 @@ int	count_flags(char const *str, int *pos, t_flags *flags)
 		|| str[*pos] == '#' || str[*pos] == '0')
 	{
 		set_flag(str[*pos], flags);
-		(*pos)++;
+		*pos = *pos + 1;
 	}
 	if (ft_isdigit(str[*pos]))
 		flags->width = get_number(str, pos);
 	if (str[*pos] == '.')
 	{
-		(*pos)++;
+		*pos = *pos + 1;
 		flags->precision = get_number(str, pos);
 	}
 	if (flags->width == -1 || flags->precision == -1)
 		return (-1);
 	return (0);
+}
+
+void	reset_flags(t_flags *flags)
+{
+	flags->minus = 0;
+	flags->plus = 0;
+	flags->space = 0;
+	flags->hashtag = 0;
+	flags->zero = 0;
+	flags->width = 0;
+	flags->precision = -2;
 }

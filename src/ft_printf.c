@@ -6,7 +6,7 @@
 /*   By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 12:19:59 by cfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/16 21:56:31 by cfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/17 00:43:52 by cfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	handle_parameter(char const *str, int *pos, va_list args)
 {
 	char	specifier;
 
-	specifier = str[(*pos)++];
+	*pos = *pos + 1;
+	specifier = str[*pos];
 	if (specifier == 'c')
 		return (print_character(va_arg(args, int)));
 	else if (specifier == 's')
@@ -52,7 +53,7 @@ int	ft_printf(char const *str, ...)
 		else
 			bytes_written = print_character(str[i]);
 		if (bytes_written == -1)
-			return (-1);
+			return (va_end(args), -1);
 		final_length += bytes_written;
 		i++;
 	}
