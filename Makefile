@@ -175,8 +175,9 @@ test: all
 	@echo "\n$(BLUE)Compiling tests...$(DEF_COLOR)"
 	@$(CC) $(CFLAGS) $(TFLAGS) -I inc/ $(NAME) $(TEST_MAND) -o $(TEST_MAND_BIN)
 	@echo "$(PINK)Executing tests...$(WHITE_BOLD)"
-	@./$(TEST_MAND_BIN)
-	@echo "$(DEF_COLOR)"
+	@echo "$(WHITE_BOLD)------------------------------------------------------------"
+	@./$(TEST_BONUS_BIN)
+	@echo "------------------------------------------------------------$(DEF_COLOR)"
 
 testB: bonus
 	@$(MKDIR) $(TEST_DIR)
@@ -192,8 +193,6 @@ test_clean:
 	@$(MKDIR) ../$(TEST_BACKUP)$(PROGRAM)
 	@cp -rf $(TEST_DIR) ../$(TEST_BACKUP)$(PROGRAM)
 	@echo "$(RED)Removing tests...$(DEF_COLOR)"
-	@echo "$(WHITE_BOLD)------------------------------------------------------------"
-	@echo "\n------------------------------------------------------------$(DEF_COLOR)"
 	@$(RMRF) $(TEST_DIR)
 #==============================#
 
