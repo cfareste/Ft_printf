@@ -192,6 +192,8 @@ test_clean:
 	@$(MKDIR) ../$(TEST_BACKUP)$(PROGRAM)
 	@cp -rf $(TEST_DIR) ../$(TEST_BACKUP)$(PROGRAM)
 	@echo "$(RED)Removing tests...$(DEF_COLOR)"
+	@echo "$(WHITE_BOLD)------------------------------------------------------------"
+	@echo "\n------------------------------------------------------------$(DEF_COLOR)"
 	@$(RMRF) $(TEST_DIR)
 #==============================#
 
