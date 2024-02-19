@@ -6,7 +6,7 @@
 #    By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/02 13:59:33 by cfidalgo          #+#    #+#              #
-#    Updated: 2024/02/17 05:45:55 by cfidalgo         ###   ########.fr        #
+#    Updated: 2024/02/19 14:12:36 by cfidalgo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,9 +89,9 @@ BONUSOBJS = $(addprefix $(OBJS_DIR), $(BONUS_FILES:.c=.o))
 
 
 #===========# DEPS #===========#
-DEPS = $(SRC:.c=.d)
+DEPS = $(OBJS:.o=.d)
 
-BONUSDEPS = $(BONUSSRC:.c=.d)
+BONUSDEPS = $(BONUSOBJS:.o=.d)
 #==============================#
 
 
