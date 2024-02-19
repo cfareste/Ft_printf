@@ -6,7 +6,7 @@
 #    By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/02 13:59:33 by cfidalgo          #+#    #+#              #
-#    Updated: 2024/02/17 04:44:52 by cfidalgo         ###   ########.fr        #
+#    Updated: 2024/02/17 05:45:55 by cfidalgo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -175,8 +175,9 @@ test: all
 	@echo "\n$(BLUE)Compiling tests...$(DEF_COLOR)"
 	@$(CC) $(CFLAGS) $(TFLAGS) -I inc/ $(NAME) $(TEST_MAND) -o $(TEST_MAND_BIN)
 	@echo "$(PINK)Executing tests...$(WHITE_BOLD)"
+	@echo "$(WHITE_BOLD)------------------------------------------------------------"
 	@./$(TEST_MAND_BIN)
-	@echo "$(DEF_COLOR)"
+	@echo "\n------------------------------------------------------------$(DEF_COLOR)"
 
 testB: bonus
 	@$(MKDIR) $(TEST_DIR)
@@ -185,7 +186,7 @@ testB: bonus
 	@echo "$(PINK)Executing tests...$(DEF_COLOR)"
 	@echo "$(WHITE_BOLD)------------------------------------------------------------"
 	@./$(TEST_BONUS_BIN)
-	@echo "------------------------------------------------------------$(DEF_COLOR)"
+	@echo "\n------------------------------------------------------------$(DEF_COLOR)"
 
 test_clean:
 	@echo "$(YELLOW)Creating backup for \"../$(TEST_BACKUP)$(PROGRAM)\"$(DEF_COLOR)"

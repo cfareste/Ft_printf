@@ -6,7 +6,7 @@
 /*   By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 19:58:27 by cfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/16 21:56:49 by cfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/19 10:17:24 by cfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	print_pointer(void *ptr)
 	return (num_length);
 }
 
-int	print_hex_number(unsigned int n, char parameter)
+int	print_hex_number(unsigned int n, char specifier)
 {
 	char	*num_str;
 	int		num_length;
@@ -58,7 +58,7 @@ int	print_hex_number(unsigned int n, char parameter)
 	if (!num_str)
 		return (-1);
 	puthex_in_str(num_str, n, num_length);
-	if (parameter == 'X')
+	if (specifier == 'X')
 		transform_hex_toupper(num_str);
 	num_length = print_string(num_str);
 	free(num_str);

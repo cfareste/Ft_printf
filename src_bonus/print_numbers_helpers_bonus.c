@@ -6,7 +6,7 @@
 /*   By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 21:09:47 by cfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/17 04:39:49 by cfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/19 10:21:52 by cfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,11 @@ int	print_precised_number(char *num_str, t_flags *flags, unsigned int n)
 	return (precision + num_length + has_sign);
 }
 
-int	print_hex_prefix(unsigned int n, char parameter)
+int	print_hex_prefix(unsigned int n, char specifier)
 {
 	if (!n)
 		return (0);
-	if (parameter == 'X')
+	if (specifier == 'X')
 		return (print_raw_string("0X"));
 	else
 		return (print_raw_string("0x"));

@@ -6,7 +6,7 @@
 /*   By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 19:58:27 by cfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/17 04:46:56 by cfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/19 10:22:15 by cfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,14 @@ int	print_pointer(void *ptr, t_flags *flags)
 	return (num_length);
 }
 
-int static	print_hex_str(char *n_str, t_flags *flags, char pm, unsigned int n)
+int static	print_hex_str(char *n_str, t_flags *flags, char sp, unsigned int n)
 {
 	int	byt_wri;
 	int	wdt_wri;
 
 	if (flags->minus)
 	{
-		if (flags->hashtag && print_hex_prefix(n, pm) == -1)
+		if (flags->hashtag && print_hex_prefix(n, sp) == -1)
 			return (-1);
 		byt_wri = print_precised_number(n_str, flags, n);
 		if (byt_wri == -1)
@@ -82,7 +82,7 @@ int static	print_hex_str(char *n_str, t_flags *flags, char pm, unsigned int n)
 	if ((!flags->zero && flags->width)
 		|| (flags->zero && flags->precision != -2 && flags->width))
 		wdt_wri = print_width(calc_total_width(n_str, flags, 0), ' ');
-	if (wdt_wri == -1 || (flags->hashtag && print_hex_prefix(n, pm) == -1))
+	if (wdt_wri == -1 || (flags->hashtag && print_hex_prefix(n, sp) == -1))
 		return (-1);
 	byt_wri = print_precised_number(n_str, flags, n);
 	if (byt_wri == -1)
@@ -90,7 +90,7 @@ int static	print_hex_str(char *n_str, t_flags *flags, char pm, unsigned int n)
 	return (byt_wri + wdt_wri + ((n && flags->hashtag) * 2));
 }
 
-int	print_hex_nbr(unsigned int n, char parameter, t_flags *flags)
+int	print_hex_nbr(unsigned int n, char specifier, t_flags *flags)
 {
 	char	*num_str;
 	int		num_length;
@@ -100,9 +100,9 @@ int	print_hex_nbr(unsigned int n, char parameter, t_flags *flags)
 	if (!num_str)
 		return (-1);
 	puthex_in_str(num_str, n, num_length);
-	if (parameter == 'X')
+	if (specifier == 'X')
 		transform_hex_toupper(num_str);
-	num_length = print_hex_str(num_str, flags, parameter, n);
+	num_length = print_hex_str(num_str, flags, specifier, n);
 	free(num_str);
 	return (num_length);
 }

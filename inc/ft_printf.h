@@ -6,7 +6,7 @@
 /*   By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:54:20 by cfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/16 22:32:30 by cfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/19 10:17:16 by cfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_uitoa(unsigned int n);
 
 // Print complex
 int		print_pointer(void *ptr);
-int		print_hex_number(unsigned int n, char parameter);
+int		print_hex_number(unsigned int n, char specifier);
 
 // Complex helpers
 int		calculate_total_hex_num_length(unsigned long n);

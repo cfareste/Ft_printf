@@ -6,7 +6,7 @@
 /*   By: cfidalgo <cfidalgo@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:54:20 by cfidalgo          #+#    #+#             */
-/*   Updated: 2024/02/17 04:48:12 by cfidalgo         ###   ########.fr       */
+/*   Updated: 2024/02/19 10:21:27 by cfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_uitoa(unsigned int n);
 // Print complex
 int		print_string(char *str, t_flags *flags);
 int		print_pointer(void *ptr, t_flags *flags);
-int		print_hex_nbr(unsigned int n, char parameter, t_flags *flags);
+int		print_hex_nbr(unsigned int n, char specifier, t_flags *flags);
 
 // Complex helpers
 int		calculate_total_hex_num_length(unsigned long n);
@@ -58,7 +58,7 @@ int		print_width(int bytes, char byte_to_print);
 
 // Numbers helpers
 int		print_precised_number(char *num_str, t_flags *flags, unsigned int n);
-int		print_hex_prefix(unsigned int n, char parameter);
+int		print_hex_prefix(unsigned int n, char specifier);
 int		check_for_signs_flags(int n, t_flags *flags);
 int		calc_total_width(char *num_str, t_flags *flags, int bytes_written);
 
