@@ -35,7 +35,7 @@ int	handle_parameter(char const *str, int *pos, va_list *args, t_flags *flags)
 		return (print_raw_char(specifier));
 }
 
-int	handle_flag(char const *str, int *pos, va_list args, t_flags *flags)
+int	handle_flag(char const *str, int *pos, va_list *args, t_flags *flags)
 {
 	*pos = *pos + 1;
 	reset_flags(flags);
@@ -49,7 +49,7 @@ int	ft_printf(char const *str, ...)
 	int		i;
 	int		final_length;
 	int		bytes_written;
-	va_list	*args;
+	va_list	args;
 	t_flags	flags;
 
 	i = 0;
